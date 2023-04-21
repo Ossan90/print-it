@@ -34,7 +34,6 @@ bannerTxt.innerHTML=`${slides[compteur].tagLine}`;
 
 
 
-
 for ( let i=0 ; i < nbSlides; i++) {
     dot.innerHTML += `<span class="dot"></span>`;
 };
@@ -44,8 +43,9 @@ dotList[0].classList.add("dot_selected");
 
 
 
+
 const dotSurligne= () => {
-  for (let i = 0; i <= nbSlides; i++) {
+  for (let i = 0; i <= nbSlides-1; i++) {
 	if (i === compteur) {
 	  dotList[i].classList.add("dot_selected");
 	} else {
@@ -62,27 +62,23 @@ arrowR.addEventListener("click", () => {
 		compteur = 0;
     } else {
 		compteur++;
-	  //Bullet point actif devient coloré nbDots.classList.add("dot_selected")
-	//les autres bullets points devient non coloré nbDots.classList.remove("dot_selected")s
+
     }
 	bannerImg.src=`./assets/images/slideshow/${slides[compteur].image}`;
 	bannerTxt.innerHTML=`${slides[compteur].tagLine}`;
 	dotSurligne();
-	console.log("compteur",compteur)
   });
 
+
   arrowL.addEventListener("click", () => {
-    if (compteur >= nbSlides-1) {
-		compteur = 0;
+    if (compteur === 0) {
+		compteur = nbSlides-1;
     } else {
 		compteur--;
-	  //Bullet point actif devient coloré nbDots.classList.add("dot_selected")
-	//les autres bullets points devient non coloré nbDots.classList.remove("dot_selected")s
     }
 	bannerImg.src=`./assets/images/slideshow/${slides[compteur].image}`;
-	bannerTxt.innerHTML=`${slides[compteur].tagLine}`;
+	bannerTxt.innerHTML=`${slides[compteur].tagLine}`;	
 	dotSurligne();
-	console.log("compteur",compteur)
   });
 
 
