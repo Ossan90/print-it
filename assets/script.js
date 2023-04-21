@@ -22,12 +22,15 @@ let nbSlides = slides.length;
 let compteur = 0;
 
 
+
 let dot = document.querySelector(".dots");
 let bannerImg = document.querySelector(".banner-img");
 let bannerTxt = document.querySelector(".banner-txt");
 const arrowL = document.querySelector(".arrow_left");
 const arrowR = document.querySelector(".arrow_right");
 
+
+bannerTxt.innerHTML=`${slides[compteur].tagLine}`;
 
 for ( let i=0 ; i < nbSlides; i++) {
     dot.innerHTML += `<span class="dot"></span>`;
