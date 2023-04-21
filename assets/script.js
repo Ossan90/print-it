@@ -32,12 +32,17 @@ const arrowR = document.querySelector(".arrow_right");
 
 bannerTxt.innerHTML=`${slides[compteur].tagLine}`;
 
+
+
+
 for ( let i=0 ; i < nbSlides; i++) {
     dot.innerHTML += `<span class="dot"></span>`;
 };
 
-
 const dotList = document.querySelectorAll(".dot");
+dotList[0].classList.add("dot_selected");
+
+
 
 const dotSurligne= () => {
   for (let i = 0; i <= nbSlides; i++) {
